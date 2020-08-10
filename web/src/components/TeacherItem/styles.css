@@ -57,7 +57,7 @@
   display: block;
 }
 
-.teacher-item footer button {
+.teacher-item footer a {
   padding: 0 2rem;
   height: 5.6rem;
   background: var(--color-secundary);
@@ -67,6 +67,7 @@
   cursor: pointer;
   outline: 0;
   font: 700 1.4rem Archivo;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
@@ -75,22 +76,22 @@
   transition: 0.2s;
 }
 
-.teacher-item footer button span {
+.teacher-item footer a span {
   display: none;
 }
 
-.teacher-item footer button:hover {
+.teacher-item footer a:hover {
   background: var(--color-secundary-dark);
 }
 
 @media (min-width: 400px) {
-  .teacher-item footer button {
+  .teacher-item footer a {
     width: 100%;
     max-width: 20rem;
     padding: 0;
   }
 
-  .teacher-item footer button span {
+  .teacher-item footer a span {
     display: initial;
   }
 }
@@ -116,13 +117,13 @@
     margin-left: 1.6rem;
   }
 
-  .teacher-item footer button {
+  .teacher-item footer a {
     width: 24.5rem;
     font-size: 1.6rem;
     justify-content: center;
   }
 
-  .teacher-item footer button img {
+  .teacher-item footer a img {
     margin-right: 1.6rem;
   }
 }

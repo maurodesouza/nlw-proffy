@@ -3,34 +3,56 @@ import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
+import { api } from '../../services/api';
 
-const TeacherItem: React.FC = () => {
+export type Teacher = {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+};
+
+type Props = {
+  teacher: Teacher;
+};
+
+const TeacherItem: React.FC<Props> = ({ teacher }) => {
+  const createNewConnection = () => {
+    api.post('connections', {
+      user_id: teacher.id,
+    });
+  };
+
   return (
     <article className="teacher-item">
       <header>
-        <img src="https://avatars3.githubusercontent.com/u/54520907?s=460&u=b9f625ca038b7223adf61fa5ba01b0b80cb6a550&v=4" alt="Mauro de Souza"/>
+        <img src={teacher.avatar} alt={teacher.name}/>
         <div>
-          <strong>Mauro de Souza</strong>
-          <span>Developer</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
 
-      <p>
-        Entusiasta das melhores tecnologias de química avançada.
-        <br /><br />
-        Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           preço/hora
-          <strong>R$ 20,00</strong>
+          <strong>{teacher.cost.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong>
         </p>
 
-        <button type="button">
+        <a
+          onClick={createNewConnection}
+          rel="noopener noreferrer"
+          target="_blank"
+          href={`https://wa.me/${teacher.whatsapp}`}
+        >
           <img src={whatsappIcon} alt="Whatsapp"/>
           <span>Entrar em contato</span>
-        </button>
+        </a>
       </footer>
     </article>
   );
