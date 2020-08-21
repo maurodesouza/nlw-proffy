@@ -125,4 +125,4 @@ This project is under license from MIT. For more details, see the [LICENSE](LICE
 <a href="#top">Back to top</a>
 
 ---
-<sup>Projeto desenvolvido com a tutoria de [Diego Fernandes](https://github.com/diego3g), da [Rocketseat](https://rocketseat.com.br).</sup>
+<sup>The project was developed under the tutorship of [Diego Fernandes](https://github.com/diego3g), from [Rocketseat](https://rocketseat.com.br).
